@@ -1,0 +1,36 @@
+<h2>Log in to the music app!</h2>
+
+<form action="<%= session_url %>" method="post">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+
+    <p>
+      <label>Email:
+        <input type="text" name="user[email]">
+      </label>
+    </p>
+
+    <p>
+      <label>Password:
+        <input type="password" name="user[password]">
+      </label>
+    </p>
+
+
+    <% unless flash[:errors].nil? %>
+      <br>
+        <p>
+          <%= flash[:errors] %>
+        </p>
+        <p>
+          Would you like to <a href="users/new">create new account</a>?
+        </p>
+      <br>
+    <% end %>
+
+
+    <input type="submit" value="Log in">
+
+</form>

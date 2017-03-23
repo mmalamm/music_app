@@ -1,0 +1,23 @@
+<h2>Sign up for the music app!</h2>
+
+<form action="<%= users_url %>" method="post">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+
+    <p>
+      <label>Email:
+        <input type="text" name="user[email]">
+      </label>
+    </p>
+
+    <p>
+      <label>Password:
+        <input type="password" name="user[password]">
+      </label>
+    </p>
+
+    <input type="submit" value="create user">
+
+</form>
